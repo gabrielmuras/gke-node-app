@@ -61,7 +61,8 @@ Other configuration can be decided by yourself, based on the instance being used
  
 
  3. If you had an unlimited amount of time to complete this task, what would you have done differently?\
-
+ 
+ - Make functional
  - Write a documentation on how to use it and why it's like this and the architecture overview
  - Write tests for the application
  - Monitor the application
@@ -73,3 +74,4 @@ Other configuration can be decided by yourself, based on the instance being used
  - Implement a canary deployment
  - Implement a image building tagging instead of relying on latest which isn't a good practice
  - I'm not sure about the cdktf but for me it does not seem like a production ready IaC solution. Lacks documentation (All of it is self generated) and not many people use it. I would probably stick with standard hcl terraform or opentofu. Or maybe crossplane inside a k8s
+ - Setup and configure postgresql connection pool and other best practices
