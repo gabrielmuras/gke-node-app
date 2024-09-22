@@ -75,9 +75,6 @@ class MyStack extends TerraformStack {
       region:"europe-north1",
       settings:{
           tier: "db-f1-micro",
-          ipConfiguration: {
-            privateNetwork: mainVpc.id,
-          },
       },
   });
 
