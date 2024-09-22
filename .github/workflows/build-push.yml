@@ -1,4 +1,4 @@
-name: Build Docker Image
+name: Build and Push Docker Image
 on:
   push:
     branches:
@@ -22,4 +22,4 @@ jobs:
             docker build . -f Dockerfile -t gmuras/node-app:latest
         - name: push the docker image
           id: push-docker-image
-          run: docker push ${{secrets.DOCKERHUB_USERNAME}}/demo-image-test:latest
+          run: docker push ${{secrets.DOCKERHUB_USERNAME}}/demo-image-test:$GITHUB_SHA
