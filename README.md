@@ -52,22 +52,24 @@ Other configuration can be decided by yourself, based on the instance being used
 
  1. How long did you spend on this assessment in total?\
  
+ - In code arround 1:45 h but I needed some time setting up my env so I would say a little bit more than 2 hours.
 
  2. What was the most difficult task?\
 
  - Setup the cdktf environment and get used on how to use it. It doesn't relly on a lot of documentation and I needed to keep reading the packages and auto generated information
+ - Time. 2 hours is too little time to setup env and to deliver a project like this.
  
 
  3. If you had an unlimited amount of time to complete this task, what would you have done differently?\
 
  - Write a documentation on how to use it and why it's like this and the architecture overview
+ - Write tests for the application
+ - Monitor the application
  - Create a infrastructure as code pipeline
  - Create a helm chart to deploy the application
- - Separate infrastructure components in different states, folders and in a better written code. Probably VPC, SQL and GKE folders.
+ - Separate infrastructure components in different states, folders and in a better written code. Probably VPC, SQL and GKE folders. And use variables instead of put values inside the code
  - Create/use modules to manage the infrastructure
  - Use ingress (like nginx controller) or istio as a L7 in front of the application
  - Implement a canary deployment
- - I'm not sure about the cdktf but for me it does not seem like a production ready IaC solution, I would probably stick with hcl terraform or opentofu
- - 
- - 
- - 
+ - Implement a image building tagging instead of relying on latest which isn't a good practice
+ - I'm not sure about the cdktf but for me it does not seem like a production ready IaC solution. Lacks documentation (All of it is self generated) and not many people use it. I would probably stick with standard hcl terraform or opentofu. Or maybe crossplane inside a k8s
