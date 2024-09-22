@@ -51,10 +51,23 @@ Other configuration can be decided by yourself, based on the instance being used
 ## Questions
 
  1. How long did you spend on this assessment in total?\
- _
+ 
 
  2. What was the most difficult task?\
- _
+
+ - Setup the cdktf environment and get used on how to use it. It doesn't relly on a lot of documentation and I needed to keep reading the packages and auto generated information
+ 
 
  3. If you had an unlimited amount of time to complete this task, what would you have done differently?\
- _
+
+ - Write a documentation on how to use it and why it's like this and the architecture overview
+ - Create a infrastructure as code pipeline
+ - Create a helm chart to deploy the application
+ - Separate infrastructure components in different states, folders and in a better written code. Probably VPC, SQL and GKE folders.
+ - Create/use modules to manage the infrastructure
+ - Use ingress (like nginx controller) or istio as a L7 in front of the application
+ - Implement a canary deployment
+ - I'm not sure about the cdktf but for me it does not seem like a production ready IaC solution, I would probably stick with hcl terraform or opentofu
+ - 
+ - 
+ - 
