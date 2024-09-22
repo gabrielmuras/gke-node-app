@@ -11,3 +11,7 @@ cdktf.log
 tsconfig.tsbuildinfo
 !jest.config.js
 !setup.js
+__tests__
+node_modules
+npm-debug.log
+build
