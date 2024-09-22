@@ -1,0 +1,41 @@
+name: Deploy to GKE
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: 'Env to be deployed'
+        type: choice
+        options:
+          - development
+          - staging
+          - production
+      tags:
+        description: 'Tag to be deployed'
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Authenticate to GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+          project_id: ${{ env.GCP_PROJECT_ID }}
+
+      - name: Set up GKE credentials
+        uses: google-github-actions/get-gke-credentials@v2
+        with:
+          cluster_name: ${{ env.GKE_CLUSTER }}
+          location: ${{ env.GKE_REGION }}
+
+      - name: Deploy to GKE
+        run: |
+          kubectl apply -f kubernetes/deployment.yaml
+          kubectl rollout restart deployment worker
+
+      - name: Wait for Deployment Rollout
+        run: |
+          kubectl rollout status deployment/express-deployment --timeout=120s
+      
