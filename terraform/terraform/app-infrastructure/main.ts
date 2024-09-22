@@ -19,8 +19,7 @@ class MyStack extends TerraformStack {
       bucket: 'tfstate-case-sisu-tech',
     });
 
-
-    var mainVpc = new ComputeNetwork(this, 'main-vpc', {
+    const mainVpc = new ComputeNetwork(this, 'main-vpc', {
       name: 'main-vpc',
       autoCreateSubnetworks: false,
     });
@@ -32,6 +31,9 @@ class MyStack extends TerraformStack {
       network: mainVpc.id, 
     });
   }
+
+
+
 }
 
 const app = new App();
